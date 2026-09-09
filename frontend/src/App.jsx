@@ -22,11 +22,11 @@ export default function App() {
             <SearchBar value={search} onChange={setSearch} />
             <NoteEditor onSave={async (t, c) => {
                 const newNote = await addNote(t, c);
-                setNotes([newNote, ...notes]);
+                setNotes(currentNotes => [newNote, ...currentNotes]);
             }} />
             <NoteList notes={filtered} onDelete={async id => {
                 await deleteNote(id);
-                setNotes(notes.filter(n => n.id !== id));
+                setNotes(currentNotes => currentNotes.filter(n => n.id !== id));
             }} />
         </div>
     );

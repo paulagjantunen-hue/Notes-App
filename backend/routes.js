@@ -13,7 +13,7 @@ export function createRoutes(db) {
         const createdAt = new Date().toISOString();
 
         const result = await db.run(
-            "INSERT INFO notes (title, content, createdAt) VALUES (?, ?, ?)",
+            "INSERT INTO notes (title, content, createdAt) VALUES (?, ?, ?)",
             [title, content, createdAt]
         );
 
