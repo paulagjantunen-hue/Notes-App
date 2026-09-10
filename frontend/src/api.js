@@ -1,4 +1,6 @@
-const API = "http://localhost:3000/api";
+const API = 
+    import.meta.env.VITE_API_URL ||
+    "http://localhost:3000/api";
 
 export async function getNotes() {
     return fetch(`${API}/notes`).then(r => r.json());
