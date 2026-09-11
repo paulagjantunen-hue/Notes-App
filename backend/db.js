@@ -1,9 +1,13 @@
 import sqlite3 from "sqlite3";
 import { open } from "sqlite";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const databasePath = resolve(dirname(fileURLToPath(import.meta.url)), "notes.db");
 
 export async function createDb() {
     const db = await open({
-        filename: "./notes.db",
+        filename: databasePath,
         driver: sqlite3.Database
     });
 
