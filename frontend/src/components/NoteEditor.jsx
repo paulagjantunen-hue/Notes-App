@@ -1,27 +1,25 @@
 import { useState } from "react";
 
-export default function NoteEditor({ onSave }) {
-    const [title, setTitle] = useState("");
-    const [content, setContent] = useState("");
-
+export default function NoteEditor({ onAdd }) {
+    const [text, setText] = useState("");
+    
     return (
         <div style={{ marginTop: 20 }}>
-            <input
-                placeholder="Title"
-                value={title}
-                onChange={e => setTitle(e.target.value)}
-            />
             <textarea
-                placeholder="Content"
-                value={content}
-                onChange={e => setContent(e.target.value)}
-                style={{ display: "block", width: "100%", height: 80, marginTop: 10 }}
+                placeholder="Write a note..."
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+                style={{ display: "block", width: "100%", height: 80 }}
             />
-            <button onClick={() => {
-                onSave(title, content);
-                setTitle("");
-                setContent("");
-            }}>
+
+            <button
+                onClick={() => {
+                    if (text.trim() === "") return;
+                    onAdd(text);
+                    setText("");
+                }}
+                style={{ marginTop: 10 }}
+            >
                 Add Note
             </button>
         </div>
