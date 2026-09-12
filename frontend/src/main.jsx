@@ -1,8 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import { Component, StrictMode, createElement } from "react";
+import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 
-class ErrorBoundary extends React.Component {
+class ErrorBoundary extends Component {
   state = { error: null };
 
   static getDerivedStateFromError(error) {
@@ -11,11 +11,11 @@ class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.error) {
-      return (
-        <main style={{ padding: "20px", fontFamily: "sans-serif" }}>
-          <h1>Notes could not load</h1>
-          <p>{this.state.error.message}</p>
-        </main>
+      return createElement(
+        "main",
+        { style: { padding: "20px", fontFamily: "sans-serif" } },
+        createElement("h1", null, "Notes could not load"),
+        createElement("p", null, this.state.error.message)
       );
     }
 
@@ -23,10 +23,10 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <ErrorBoundary>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </ErrorBoundary>
+createRoot(document.getElementById("root")).render(
+  createElement(
+    ErrorBoundary,
+    null,
+    createElement(StrictMode, null, createElement(App))
+  )
 );
