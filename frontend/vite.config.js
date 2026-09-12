@@ -1,5 +1,3 @@
 export default {
-    server: {
-        port: 5500
-    }
+    root: './frontend',
 };

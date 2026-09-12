@@ -1,5 +1,6 @@
 {
     "name": "Notes App",
     "image": "mcr.microsoft.com/devcontainers/javascript-node:latest",
-    "postCreateCommand": "cd backend && npm install && cd ../frontend && npm install"
+    "workspaceFolder": "/workspaces/Notes-App/frontend",
+    "postCreateCommand": "npm install"
 }
