@@ -1,4 +1,4 @@
-const API_URL = window.location.origin.replace("5173", "3001");
+const API_URL = window.location.origin.replace("5173", "3000");
 
 export async function getNotes() {
     const res = await fetch(`${API}/notes`);
