@@ -1,4 +1,4 @@
-const API = "http://localhost:3000/api";
+const API = "https://literate-space-dollop-v67x65r4gqprfp99-5173.app.github.dev/";
 
 export async function getNotes() {
     const res = await fetch(`${API}/notes`);
