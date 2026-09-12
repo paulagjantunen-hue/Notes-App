@@ -18,9 +18,7 @@ export default function App() {
 
   return (
     <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
-      <h1 style={{ fontSize: "40px", color: "red" }}>DEBUG: APP RENDEROI</h1>
-
-      <p style={{color: "blue", fontSize: "20px"}}>Notes count: {notes.length}</p>
+      <h1>Notes</h1>
 
       <SearchBar search={search} setSearch={setSearch} />
 
