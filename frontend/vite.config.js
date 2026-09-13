@@ -1,5 +1,9 @@
+import { fileURLToPath } from 'node:url';
+
+const frontendRoot = fileURLToPath(new URL('.', import.meta.url));
+
 export default {
-    root: '.',
+    root: frontendRoot,
     server: {
         host: '0.0.0.0',
         allowedHosts: true,

@@ -58,3 +58,43 @@ npm run dev
 ```
 
 Open the URL Codespaces gives you.
+
+## API Endpoints (They Work... Eventually)
+
+### GET `/notes`
+Returns all notes (if the backend feels like cooperating).
+
+### POST `/notes`
+Adds a new note.
+
+### Body:
+```json
+{
+    "text": "Your note text"
+}
+```
+
+## Database
+
+Stored in:
+```text
+backend/notes.db
+```
+
+If it disappears, SQLite will simply recreate it like a clingy ex.
+
+---
+
+## When Everything Finally Works
+
+You'll see:
+
+- Notes loading
+- Notes saving
+- Notes searching
+
+---
+
+## License
+
+This project is licensed under the **"Please Don't Break Again" License**.
