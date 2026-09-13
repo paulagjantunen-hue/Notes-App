@@ -1,46 +1,60 @@
-# Notes-App
-A simple full-stack app where users can create, edit, delete, and search notes.
+# Notes App - The "Why Is Nothing Working?" Edition
 
-# INSTALLATION GUIDE - Notes App
+Welcome to **Notes App**, the project that taught me React, Express, SQLite...
+and the true meaning of *emotional resilience*.
 
-## 1. Requirements
-- Node.js (v18+)
-- Git
-- Any code editor (VS Code recommended)
+This README exists because someone (probably you) will open this repo later and think:
 
-## 2. Clone the project
-- git clone https://github.com/paulagjantunen-hue/Notes-App.git
-- cd Notes-App
+> "Why does this app scream 'Could not connect to the notes server' like it's in a soap opera?"
 
-## 3. Install backend
-- cd backend
-- npm install
-- node server.js
-Backend runs at:
-http://localhost:3000/api
+Fear not.
+This document explains everything.
 
-## 4. Install frontend
-Open a second terminal:
-- cd frontend
-- npm install
-- npm run dev
-Frontend runs at:
-http://localhost:5173
+---
 
-## 5. Using the app
-- Create notes
-- Delete notes
-- Search notes
-- All data saved locally in `backend/notes.db`
+## What Is This App?
 
-## 6. Troubleshooting
-If you get errors:
-- Delete `notes.db`
-- Run backend again
-- Make sure ports 3000 and 5173 are free
+A simple notes app where you:
 
-## 7. Optional
-You can edit:
-- `frontend/src/api.js` → change backend URL
-- `backend/routes.js` → add new endpoints
-- `frontend/src/components` → customize UI
+- write notes
+- save notes
+- search notes
+- cry when nothing works
+- celebrate when it finally does
+
+It's built with:
+
+- **React + Vite** (frontend)
+- **Express + SQLite** (backend)
+- **GitHub Codespaces** (the final boss)
+
+---
+
+## How To Run This App (Without Losing Your Mind)
+
+### 1. Open a Codespace
+Because of course this project only works in Codespaces.
+
+---
+
+## Backend (Port 3000, because why not)
+
+```bash
+cd backend
+npm install
+node server.js
+```
+
+If it doesn't start, just stare at the terminal until it feels guilty and works.
+
+---
+
+## Frontend (Port 5173, the drama queen)
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open the URL Codespaces gives you.
