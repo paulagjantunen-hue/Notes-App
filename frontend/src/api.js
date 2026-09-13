@@ -1,22 +1,29 @@
 const API = "/api";
 
-export async function getNotes() {
-    const res = await fetch(`${API}/notes`);
+async function request(url, options) {
+    const res = await fetch(url, options);
+
+    if (!res.ok) {
+        throw new Error(`Request failed with status ${res.status}`);
+    }
+
     return res.json();
 }
 
+export async function getNotes() {
+    return request(`${API}/notes`);
+}
+
 export async function addNote(text) {
-    const res = await fetch(`${API}/notes`, {
+    return request(`${API}/notes`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),
     });
-    return res.json();
 }
 
 export async function deleteNote(id) {
-    const res = await fetch(`${API}/notes/${id}`, {
+    return request(`${API}/notes/${id}`, {
         method: "DELETE",
     });
-    return res.json();
 }

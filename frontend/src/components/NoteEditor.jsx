@@ -15,8 +15,10 @@ export default function NoteEditor({ onAdd }) {
             <button
                 onClick={() => {
                     if (text.trim() === "") return;
-                    onAdd(text);
-                    setText("");
+                    Promise.resolve()
+                        .then(() => onAdd(text))
+                        .then(() => setText(""))
+                        .catch(() => {});
                 }}
                 style={{ marginTop: 10 }}
             >

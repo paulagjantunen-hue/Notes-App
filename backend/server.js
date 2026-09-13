@@ -20,10 +20,15 @@ async function init() {
 
     // POST /api/notes
     app.post("/api/notes", async (req, res) => {
-        const { text } = req.body;
+        const text = typeof req.body.text === "string" ? req.body.text.trim() : "";
+
+        if (!text) {
+            return res.status(400).json({ error: "Note text is required." });
+        }
+
         await db.run("INSERT INTO notes (text) VALUES (?)", text);
         const notes = await db.all("SELECT * FROM notes");
-        res.json(notes);
+        res.status(201).json(notes);
     });
 
     // DELETE /api/notes/:id

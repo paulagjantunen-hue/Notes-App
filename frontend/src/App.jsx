@@ -28,11 +28,14 @@ export default function App() {
       <SearchBar search={search} setSearch={setSearch} />
 
       <NoteEditor
-        onAdd={(text) => {
+        onAdd={(text) =>
           addNote(text)
             .then(setNotes)
-            .catch(() => setError("Could not save the note."));
-        }}
+            .catch((error) => {
+              setError("Could not save the note.");
+              throw error;
+            })
+        }
       />
 
       <NoteList
