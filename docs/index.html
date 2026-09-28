@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes App Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1,6;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .center {
+            text-align: center;
+        }
+        a.button {
+            display: inline-block;
+            padding: 10px 16px;
+            background: #007bff;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Notes App Demo</h1>
+    <p class="center">By @paula_g_jantunen</p>
+
+    <h2>What is this?</h2>
+    <p>
+        This is the demo page for my <strong>Notes App</strong>, the project that taught me React, Express, SQLite,
+        and the true meaning of emotional resilience. The actual app runs in GitHub Codespaces, so this page
+        shows screenshots, instructions, and everything you need to understand or test it.
+    </p>
+
+    <h2>Features</h2>
+    <ul>
+        <li>Write notes</li>
+        <li>Save notes</li>
+        <li>Search notes</li>
+    </ul>
+
+    <h2>Screenshot</h2>
+    <img src="screenshot.png" alt="Notes App Screenshot">
+
+    <h2>How To Run the App</h2>
+    <p>
+        The app runs entirely in <strong>GitHub Codespaces</strong>.
+        Here's the short version:
+    </p>
+
+    <h3>Backend (Port 3000)</h3>
+    <pre><code>cd backend
+npm install
+node server.js
+</code></pre>
+
+    <h3>Frontend (Port 5173)</h3>
+    <pre><code>cd frontend
+npm install
+npm run dev
+</code></pre>
+
+    <p>
+        Open the URL Codespaces gives you.
+        If it screams "Could not connect to the notes server," make sure port 3000 is public.
+    </p>
+
+    <h2>Source Code</h2>
+    <p class="center">
+        <a class="button" href="https://github.com/paulagjantunen-hue/Notes-App" target="_blank">
+            View Source Code
+        </a>
+    </p>
+
+    <h2>Database</h2>
+    <p>
+        Stored in <code>backend/notes.db</code>.
+        If it disappears, SQLite will simply recreate it like a clingy ex.
+    </p>
+    
+</body>
+</html>
