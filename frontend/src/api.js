@@ -1,4 +1,4 @@
-const API = "/api";
+const API = "https://notes-app-1-b4hg.onrender.com/api";
 
 async function request(url, options) {
     const res = await fetch(url, options);
